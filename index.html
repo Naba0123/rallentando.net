@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
 
+<script type="text/javascript">
+    var rallentando = {
+        cards: [
+            {
+                title: 'C91 2016冬コミ 頒布情報',
+                date: '2016/12/20',
+                image: './images/jacket.jpg',
+                cont: '12/31(Sat) 西 り-34a<br>新譜間に合いませんでした…',
+                buttons: [
+                    {
+                        title: '特設ページへ',
+                        url: './cont/c91'
+                    }
+                ]
+            },
+            {
+                title: 'C90 2016年夏コミ',
+                date: '2016/08/10',
+                image: './images/piano.jpg',
+                cont: '皆様のおかげで完売いたしました。ありがとうございます。',
+                buttons: [
+                    {
+                        title: '特設ページへ'
+                    }
+                ]
+            }
+        ]
+    }
+</script>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,6 +43,8 @@
     <!-- library -->
     <link rel="stylesheet" href="./vendor/css-spinners-2.2.0/css/spinner/throbber.css">
     <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
 
     <!-- User Style -->
     <style>
@@ -29,6 +61,7 @@
         h5,
         h6 {
             font-weight: 500;
+            letter-spacing: 0.1em;
         }
 
         p {
@@ -37,6 +70,14 @@
 
         .row>div {
             margin-bottom: 15px;
+        }
+
+        .card-title {
+            margin-bottom: 0;
+        }
+
+        .card-date {
+            font-size: small;
         }
     </style>
 </head>
@@ -50,49 +91,43 @@
 
         <style>
             #header {
-                background-color: black;
+                margin-top: 20px;
                 text-align: center;
                 margin-bottom: 20px;
             }
         </style>
         <div id="header">
             <h1>Rallentando</h1>
+            <p>The circle of writing original piano songs.</p>
         </div>
+
+        <hr>
 
         <div class="container">
 
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <div id="sys-cards" class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-primary mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">C91 2016年夏コミ 頒布情報</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title text-primary">サークル名変更のお知らせ</h5>
+                            <p class="text-right card-date">2018/10/07</p>
+                            <p class="card-text">
+                                今までC90, C91と「Euphoria Time」のサークル名で活動を行っておりましたが、 この度「Rallentando」に名前を変更いたしました。 今後ともよろしくお願いいたします！
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+
+        </div>
+
+        <hr>
+        <div id="footer">
+            <p style="text-align: center; font-size: small">
+                <a href="https://twitter.com/Naba0123" target="_blank">Contact</a>
+                / <a href="http://naba.biz/" target="_blank">naba.biz</a><br> (c) 2016-2017 Euphoria Time, 2018- Rallentando
+                All Right Reserved.
+            </p>
         </div>
 
     </div>
@@ -103,14 +138,39 @@
     <!-- User Script -->
     <script type="text/javascript">
         $(function () {
+            $.each(rallentando.cards, function () {
+                var card = this;
+                var str = '<div class="col-lg-5 col-md-6"><div class="card">';
+                if (card.image !== undefined) {
+                    str += '<img class="card-img-top" src="' + card.image + '">';
+                }
+                str += '<div class="card-body">';
+                if (card.title) {
+                    str += '<h5 class="card-title">' + card.title + '</h5>';
+                }
+                if (card.date) {
+                    str += '<p class="text-right card-date">' + card.date + '</p>';
+                }
+                if (card.cont) {
+                    str += '<p class="card-text">' + card.cont + '</p>';
+                }
+                if (card.buttons) {
+                    $.each(card.buttons, function () {
+                        var button = this;
+                        if (button.url) {
+                            str += '<a href="' + button.url + '" class="btn btn-outline-primary">' + button.title + '</a>';
+                        } else {
+                            str += '<span class="btn btn-outline-secondary disabled">' + button.title + '</span>';
+                        }
+                    });
+                }
+                str += '</div></div></div>';
+
+                $('#sys-cards').append(str);
+            });
+
             $('#loading').fadeOut();
             $("#main").fadeIn();
-
-            $('.card').hover(function () {
-                $(this).css('background-color', '#E0F2F7');
-            }, function () {
-                $(this).css('background-color', 'transparent');
-            });
         });
     </script>
 </body>
