@@ -16,13 +16,12 @@ export default (props) => {
   return (
     <div>
       <Header location={props.location} />
-      <hr style={{ marginTop: 0 }} />
 
       <Container>
         {props.children}
       </Container>
-      
-      <hr/>
+
+      <hr style={{ marginTop: "30px" }} />
       <Footer />
     </div>
   )
