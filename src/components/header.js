@@ -29,8 +29,8 @@ export default (props) => {
 
   return (
     <header>
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
-        <h1>Rallentando</h1>
+      <div style={{ textAlign: "center" }}>
+        <h1 style={{ marginTop: "10px" }}>Rallentando</h1>
       </div>
       <div>
         <Container>

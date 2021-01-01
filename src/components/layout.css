@@ -8,25 +8,50 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+  margin-top: 40px;
+  text-decoration: underline #1E88A8;
 }
 
 p {
   font-weight: 200;
 }
 
+a {
+  color:  #2EA9DF;
+}
+a:hover {
+  color: #1E88A8;
+}
+
 footer {
   margin-bottom: 20px;
-  font-size: 0.8rem;
   text-align: center;
+}
+footer .footer-sns {
+  display: flex;
+  justify-content: center;
+	list-style: none;
+  font-size: 30px;
+}
+footer .footer-sns a {
+  color: black;
+}
+footer .footer-sns a:hover {
+  color: #1E88A8;
+}
+footer .footer-sns li:not(:last-child) {
+	margin-right: 30px;
 }
 
 /* nav */
 .nav-item {
   border-left: 1px solid lightgray;
-  font-weight: bold;
   letter-spacing: 0.1em;
 }
 .nav-item:last-child {
@@ -42,10 +67,22 @@ footer {
   background-color: lightgray;
 }
 .nav-item .disabled {
-  background-color: dimgray;
+  background-color: rgb(73, 73, 73);
   color: white;
 }
 
+a.more-link {
+  color: darkgray;
+}
+a.more-link:hover {
+  color: dimgray;
+  text-decoration: none;
+}
+
 .carousel {
-  box-shadow: 0 0 5px lightgray;
+  box-shadow: 0 0 7px lightgray;
+}
+
+svg.svg-inline--fa {
+  margin-right: 0.2em;
 }
