@@ -1,5 +1,5 @@
 html, body {
-  font-family: 'Sawarabi Gothic', sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 h1,
@@ -10,22 +10,42 @@ h5,
 h6 {
     font-weight: 500;
     letter-spacing: 0.1em;
-    text-shadow: 0 0 5px lightgray;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 p {
   font-weight: 200;
 }
 
-/* nav */
-.nav-tabs .nav-link.active {
-  background-color: #1E88A8;
-  color: white;
-}
-.navbar {
-  padding: .5rem 0;
+footer {
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
-header {
-  margin-bottom: 20px;
+/* nav */
+.nav-item {
+  border-left: 1px solid lightgray;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+.nav-item:last-child {
+  border-right: 1px solid lightgray;
+}
+.nav-item h6 {
+  margin: 0;
+}
+.nav-item a {
+  color: black;
+}
+.nav-item a:hover {
+  background-color: lightgray;
+}
+.nav-item .disabled {
+  background-color: dimgray;
+  color: white;
+}
+
+.carousel {
+  box-shadow: 0 0 5px lightgray;
 }

@@ -6,9 +6,8 @@ export default () => {
 
   return (
     <footer>
-      <hr/>
       <Container>
-        footer
+        (c) Rallentando, Euphoria Time All Right Reserved.
       </Container>
     </footer>
   )

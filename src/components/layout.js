@@ -4,7 +4,6 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 
 import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../components/layout.css"
@@ -17,11 +16,13 @@ export default (props) => {
   return (
     <div>
       <Header location={props.location} />
-      <Container>
+      <hr style={{ marginTop: 0 }} />
 
-        <Row>{props.children}</Row>
+      <Container>
+        {props.children}
       </Container>
       
+      <hr/>
       <Footer />
     </div>
   )
