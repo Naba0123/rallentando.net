@@ -9,7 +9,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -28,6 +28,10 @@ a {
 }
 a:hover {
   color: #1E88A8;
+}
+
+.container-fluid {
+  max-width: 1100px;
 }
 
 header {
@@ -58,23 +62,23 @@ footer .footer-sns li:not(:last-child) {
 }
 
 /* nav */
-.nav-item {
+header .nav-item {
   border-left: 1px solid lightgray;
   letter-spacing: 0.1em;
 }
-.nav-item:last-child {
+header .nav-item:last-child {
   border-right: 1px solid lightgray;
 }
-.nav-item h6 {
+header .nav-item h6 {
   margin: 0;
 }
-.nav-item a {
+header .nav-item a {
   color: black;
 }
-.nav-item a:hover {
+header .nav-item a:hover {
   background-color: lightgray;
 }
-.nav-item .disabled {
+header .nav-item .disabled {
   background-color: rgb(73, 73, 73);
   color: white;
 }

@@ -22,7 +22,7 @@ export default () => {
             </a>
           </li>
           <li>
-            <a href="https://soundcloud.com/Naba0123">
+            <a href="https://www.youtube.com/channel/UCl3mMexjHoHmim6bijJg2YQ">
               <FontAwesomeIcon icon={faYoutube} />
             </a>
           </li>

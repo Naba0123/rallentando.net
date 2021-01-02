@@ -1,0 +1,17 @@
+.tab-content {
+  padding: 1em;
+}
+.card {
+  margin: 0.5em 0;
+}
+
+.youtube-list p {
+  margin: 0.5em 0 0;
+}
+
+.soundcloud-list iframe {
+  margin-bottom: 1em;
+}
+.soundcloud-list iframe:last-child {
+  margin-bottom: 0;
+}
