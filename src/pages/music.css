@@ -15,3 +15,27 @@
 .soundcloud-list iframe:last-child {
   margin-bottom: 0;
 }
+
+.music-detail {
+  padding: 1em 2em;
+  border-radius: 0.3em;
+  box-shadow: 0 0 2px gray;
+  margin: 0;
+}
+.music-detail ul {
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+}
+h2 {
+  margin: 1em 0;
+}
+h3 {
+  text-decoration: underline #FDAC53 3px;
+  margin: 1em 0;
+}
+
+.listen-list {
+  display: flex;
+  flex-direction: row;
+}
