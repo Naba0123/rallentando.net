@@ -72,7 +72,8 @@ export default function Home({ location }) {
           </Row>
           
         </Tab>
-        {/* <Tab eventKey="youtube" title="YouTube">
+
+        <Tab eventKey="youtube" title="YouTube">
           
           <Row>
             <Col md={6} className="youtube-list">
@@ -83,7 +84,8 @@ export default function Home({ location }) {
             </Col>
           </Row>
 
-        </Tab> */}
+        </Tab>
+        
         <Tab eventKey="soundcloud" title="SoundCloud">
           <div className="soundcloud-list">
             {soundcloudList.map((id) => (
