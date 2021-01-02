@@ -9,7 +9,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -28,6 +28,10 @@ a {
 }
 a:hover {
   color: #1E88A8;
+}
+
+.container-fluid {
+  max-width: 1100px;
 }
 
 header {

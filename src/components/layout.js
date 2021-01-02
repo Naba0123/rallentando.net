@@ -17,7 +17,7 @@ export default (props) => {
     <div>
       <Header location={props.location} />
 
-      <Container>
+      <Container fluid>
         {props.children}
       </Container>
 
