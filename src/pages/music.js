@@ -14,6 +14,10 @@ import "./music.css"
 
 export default function Home({ location }) {
 
+  const soundcloudList = [
+    276183134, 246363767, 245825677, 243405491, 200761010, 200760703, 200760295, 200759187
+  ]
+
   return (
     <Layout location={location}>
 
@@ -48,9 +52,11 @@ export default function Home({ location }) {
 
         </Tab>
         <Tab eventKey="soundcloud" title="SoundCloud">
-          
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/276183134&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/naba0123" title="Naba" target="_blank" style="color: #cccccc; text-decoration: none;">Naba</a> · <a href="https://soundcloud.com/naba0123/c90-3q-45apiano-sketch-vol1-xfd" title="【C91 3日目西り-34a】Piano Sketch Vol.1 XFD【ソロピアノアルバム】" target="_blank" style="color: #cccccc; text-decoration: none;">【C91 3日目西り-34a】Piano Sketch Vol.1 XFD【ソロピアノアルバム】</a></div>
-
+          <div className="soundcloud-list">
+            {soundcloudList.map((id) => (
+              <iframe width="100%" height="125" scrolling="no" frameborder="no" allow="autoplay" src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${id}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false`}></iframe>
+            ))}
+            </div>
         </Tab>
       </Tabs>
 
