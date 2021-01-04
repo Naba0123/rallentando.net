@@ -14,8 +14,8 @@ export default (props) => {
       path: "/news/"
     },
     {
-      name: "MUSIC",
-      path: "/music/"
+      name: "DISCOGRAPHY",
+      path: "/discography/"
     },
     {
       name: "EVENT",

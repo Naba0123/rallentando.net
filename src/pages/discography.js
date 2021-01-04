@@ -1,9 +1,12 @@
 import React from "react"
+import {Link} from "gatsby"
 
 import Tabs from "react-bootstrap/Tabs"
 import Tab from "react-bootstrap/Tab"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Card from "react-bootstrap/Card"
+import Accordion from "react-bootstrap/Accordion"
 
 import Layout from "../components/layout"
 
@@ -11,7 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircle, faPlayCircle } from "@fortawesome/free-regular-svg-icons"
 import { faCompactDisc, faHeadphonesAlt } from "@fortawesome/free-solid-svg-icons"
 
-import "./music.css"
+import "./discography.css"
 
 export default function Home({ location }) {
 
@@ -23,23 +26,36 @@ export default function Home({ location }) {
     <Layout location={location}>
 
       {/* NEWS */}
-      <h1><FontAwesomeIcon icon={faCircle} />MUSIC</h1>
+      <h1><FontAwesomeIcon icon={faCircle} />DISCOGRAPHY</h1>
 
       <Tabs defaultActiveKey="album" id="tab-music">
         <Tab eventKey="album" title="Album">
 
-          <h2 style={{ textDecoration: "underline #FDAC53 3px" }}><FontAwesomeIcon icon={faCompactDisc} />Piano Scketch Vol.1</h2>
           <Row>
-            <Col md={4}>
-              <img src="https://placehold.jp/600x600.png" width="100%" />
+            <Col md={6}>
 
-              <h3 style={{ textDecoration: "underline #FDAC53 3px" }}><FontAwesomeIcon icon={faPlayCircle} />クロスフェード</h3>
+              <Link to="#">
+                <Card>
+                  <Card.Header>
+                    <img src="https://placehold.jp/1000x1000.png" />
+                  </Card.Header>
+                  <Card.Body>
+                    <h2>Piano Sketch Vol.1</h2>
+                  </Card.Body>
+                </Card>
+              </Link>
+
+            </Col>
+
+          </Row>
+
+
+              {/* <h3><FontAwesomeIcon icon={faPlayCircle} />クロスフェード</h3>
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/VlkaBEF6WZ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <p><a href="https://www.youtube.com/watch?v=VlkaBEF6WZ4">【C90 3日目西q-45a】Piano Sketch Vol.1 XFD【ソロピアノアルバム】</a></p>
-            </Col>
-            <Col md={8}>
+
               <ul>
                 <li>2016年夏コミ（C90）にて頒布</li>
                 <li>オリジナルピアノ曲集10曲を収録</li>
@@ -59,7 +75,7 @@ export default function Home({ location }) {
                 </ul>
               </div>
 
-              <h3 style={{ textDecoration: "underline #FDAC53 3px" }}><FontAwesomeIcon icon={faHeadphonesAlt} />Listen by</h3>
+              <h3><FontAwesomeIcon icon={faHeadphonesAlt} />Listen by</h3>
               <div className="listen-list">
                 <p>a</p>
                 <p>a</p>
@@ -67,9 +83,7 @@ export default function Home({ location }) {
                 <p>a</p>
                 <p>a</p>
                 <p>a</p>
-              </div>
-            </Col>
-          </Row>
+              </div> */}
           
         </Tab>
 

@@ -1,9 +1,6 @@
 .tab-content {
   padding: 1em;
 }
-.card {
-  margin: 0.5em 0;
-}
 
 .youtube-list p {
   margin: 0.5em 0 0;
@@ -27,15 +24,22 @@
   list-style: none;
   padding-left: 0;
 }
-h2 {
-  margin: 1em 0;
-}
 h3 {
-  text-decoration: underline #FDAC53 3px;
   margin: 1em 0;
 }
 
 .listen-list {
   display: flex;
   flex-direction: row;
+}
+
+.card-header {
+  padding: 0;
+}
+.card-header img {
+  width: 100%;
+}
+.card-body h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
 }
