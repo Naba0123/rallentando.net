@@ -1,0 +1,45 @@
+.tab-content {
+  padding: 1em;
+}
+
+.youtube-list p {
+  margin: 0.5em 0 0;
+}
+
+.soundcloud-list iframe {
+  margin-bottom: 1em;
+}
+.soundcloud-list iframe:last-child {
+  margin-bottom: 0;
+}
+
+.music-detail {
+  padding: 1em 2em;
+  border-radius: 0.3em;
+  box-shadow: 0 0 2px gray;
+  margin: 0;
+}
+.music-detail ul {
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+}
+h3 {
+  margin: 1em 0;
+}
+
+.listen-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-header {
+  padding: 0;
+}
+.card-header img {
+  width: 100%;
+}
+.card-body h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+}
