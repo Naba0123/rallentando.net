@@ -1,41 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Carousel from "react-bootstrap/Carousel"
 import Table from "react-bootstrap/Table"
-import Badge from "react-bootstrap/Badge"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 import Layout from "../components/layout"
+import NewsCategory from "../components/newsCategory"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircle } from "@fortawesome/free-regular-svg-icons"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 
-export default function Home({ location }) {
-
-  const newsList = [
-    {
-      date: "2021/01/XX",
-      title: "Piano Sketch Vol.1 が各種音楽配信サイトにて配信が開始されました。",
-      path: "/news/aaaaa",
-    },
-    {
-      date: "2018/10",
-      title: "サークル名が Euphoria Time から Rallentando へと変わりました。今後もよろしくお願いいたします。",
-    },
-    {
-      date: "2016/12",
-      title: "【C91】頒布情報を更新しました。新刊はありません。",
-      path: "/news/aaaaa"
-    },
-    {
-      date: "2016/08",
-      title: "【C90】新刊「Piano Sketch Vol1」完売いたしました。本当にありがとうございます。",
-    },
-  ]
+export default function Home({ data, location }) {
 
   return (
     <Layout location={location}>
@@ -81,18 +60,19 @@ export default function Home({ location }) {
       <h1><FontAwesomeIcon icon={faCircle} />NEWS</h1>
       <Table className="news" style={{ marginBottom: 0 }}>
         <tbody>
-          {newsList.map((news) => {
-          let cont
-          if (news.path) {
-            cont = <a href={news.path}>{news.title}</a>
-          } else {
-            cont = news.title
-          }
-          return (<tr>
-            <th>{news.date}</th>
-            <td><Badge variant="success">Release</Badge></td>
-            <td>{cont}</td>
-          </tr>)
+          {data.allMarkdownRemark.edges.map(( news ) => {
+            const frontmatter = news.node.frontmatter
+            let cont
+            if (frontmatter.slug) {
+              cont = <Link to={`/news/${frontmatter.slug}`}>{frontmatter.title}</Link>
+            } else {
+              cont = frontmatter.title
+            }
+            return (<tr>
+              <th>{frontmatter.date}</th>
+              <td><NewsCategory category={frontmatter.category} /></td>
+              <td>{cont}</td>
+            </tr>)
           })}
         </tbody>
       </Table>
@@ -125,3 +105,25 @@ export default function Home({ location }) {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/news/"}}
+      sort: {order: DESC, fields: frontmatter___date}
+      limit: 3
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            category
+            slug
+            date(formatString: "YYYY/MM/DD")
+          }
+        }
+      }
+    }
+  }
+`
