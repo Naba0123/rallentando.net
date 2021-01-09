@@ -1,0 +1,12 @@
+.link-list {
+  text-align: center;
+}
+
+.link-list p {
+  font-size: 8em;
+  margin-bottom: -0.1em;
+}
+
+.link-list a {
+  color: black;
+}

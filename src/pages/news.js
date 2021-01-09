@@ -19,6 +19,10 @@ export default function Home({ location }) {
       path: "/news/aaaaa",
     },
     {
+      date: "2021/01/XX",
+      title: "ホームページをリニューアルしました。",
+    },
+    {
       date: "2018/10",
       title: "サークル名が Euphoria Time から Rallentando へと変わりました。今後もよろしくお願いいたします。",
     },
