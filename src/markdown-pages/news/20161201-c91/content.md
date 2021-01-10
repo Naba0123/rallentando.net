@@ -1,5 +1,4 @@
 ---
-slug: "c91-info"
 date: "2016-12-01"
 category: "EVENT"
 title: "【C91】頒布情報を更新しました。"

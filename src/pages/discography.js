@@ -1,6 +1,8 @@
 import React from "react"
 import {Link} from "gatsby"
 
+import Image from "gatsby-image"
+
 import Tabs from "react-bootstrap/Tabs"
 import Tab from "react-bootstrap/Tab"
 import Row from "react-bootstrap/Row"
@@ -8,13 +10,14 @@ import Col from "react-bootstrap/Col"
 import Card from "react-bootstrap/Card"
 
 import Layout from "../components/layout"
+import utils from "../utils/utils"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircle } from "@fortawesome/free-regular-svg-icons"
 
 import "./discography.css"
 
-export default function Home({ location }) {
+export default function Home({ data, location }) {
 
   const soundcloudList = [
     246363767, 245825677, 243405491, 200761010, 200760703, 200760295
@@ -29,21 +32,24 @@ export default function Home({ location }) {
         <Tab eventKey="album" title="Album">
 
           <Row>
-            <Col md={6}>
-
-              <Link to="#">
-                <Card>
-                  <Card.Header>
-                    <img src="https://placehold.jp/1000x1000.png" alt="title" />
-                  </Card.Header>
-                  <Card.Body>
-                    <h2>Piano Sketch Vol.1</h2>
-                  </Card.Body>
-                </Card>
-              </Link>
-
-            </Col>
-
+            {data.allMarkdownRemark.edges.map(( disc ) => {
+              const frontmatter = disc.node.frontmatter
+              return (
+                <Col md={6}>
+                  <Link to={utils.markdownPath(disc.node.fileAbsolutePath)}>
+                    <Card>
+                      <Card.Header>
+                        <Image fluid={disc.node.frontmatter.eyecatch.childImageSharp.fluid} />
+                        {/* <img src="https://placehold.jp/1000x1000.png" alt="title" /> */}
+                      </Card.Header>
+                      <Card.Body>
+                        <h2>{frontmatter.title}</h2>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              )
+            })}
           </Row>
 
 
@@ -109,3 +115,28 @@ export default function Home({ location }) {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/markdown-pages/discography/"}}
+      sort: {order: DESC, fields: frontmatter___date}
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            eyecatch {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+          fileAbsolutePath
+        }
+      }
+    }
+  }
+`
