@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby"
 
 import Table from "react-bootstrap/Table"
 
+import utils from "../utils/utils"
+
 import Layout from "../components/layout"
 import NewsCategory from "../components/newsCategory"
 
@@ -22,8 +24,8 @@ export default function Home({ data, location }) {
           {data.allMarkdownRemark.edges.map(( news ) => {
             const frontmatter = news.node.frontmatter
             let cont
-            if (frontmatter.slug) {
-              cont = <Link to={`/news/${frontmatter.slug}`}>{frontmatter.title}</Link>
+            if (news.node.html) {
+              cont = <Link to={utils.markdownPath(news.node.fileAbsolutePath)}>{frontmatter.title}</Link>
             } else {
               cont = frontmatter.title
             }
@@ -58,18 +60,19 @@ export default function Home({ data, location }) {
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/news/"}}
+      filter: {fileAbsolutePath: {regex: "/markdown-pages/news/"}}
       sort: {order: DESC, fields: frontmatter___date}
     ) {
       edges {
         node {
           id
+          html
           frontmatter {
             title
             category
-            slug
             date(formatString: "YYYY/MM/DD")
           }
+          fileAbsolutePath
         }
       }
     }

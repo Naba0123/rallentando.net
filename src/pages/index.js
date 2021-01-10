@@ -9,6 +9,8 @@ import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
 import NewsCategory from "../components/newsCategory"
 
+import utils from "../utils/utils"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircle } from "@fortawesome/free-regular-svg-icons"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
@@ -63,8 +65,8 @@ export default function Home({ data, location }) {
           {data.allMarkdownRemark.edges.map(( news ) => {
             const frontmatter = news.node.frontmatter
             let cont
-            if (frontmatter.slug) {
-              cont = <Link to={`/news/${frontmatter.slug}`}>{frontmatter.title}</Link>
+            if (news.node.html) {
+              cont = <Link to={utils.markdownPath(news.node.fileAbsolutePath)}>{frontmatter.title}</Link>
             } else {
               cont = frontmatter.title
             }
@@ -116,12 +118,13 @@ export const query = graphql`
       edges {
         node {
           id
+          html
           frontmatter {
             title
             category
-            slug
             date(formatString: "YYYY/MM/DD")
           }
+          fileAbsolutePath
         }
       }
     }
