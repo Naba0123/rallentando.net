@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
+import Image from "gatsby-image"
+
 import Carousel from "react-bootstrap/Carousel"
 import Table from "react-bootstrap/Table"
 import Row from "react-bootstrap/Row"
@@ -23,50 +25,30 @@ export default function Home({ data, location }) {
 
       {/* TOP Carousel */}
       <Carousel style={{ marginBottom: "40px" }}>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://placehold.jp/373940/ffffff/800x300.png?text=いちまいめ"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://placehold.jp/282c34/ffffff/800x300.png?text=にまいめ"
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://placehold.jp/20232a/ffffff/800x300.png?text=さんまいめ"
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        {data.bannerList.edges.map(({node}) => {
+          return (
+            <Carousel.Item>
+              <Link to={node.frontmatter.url}>
+                <Image fluid={node.frontmatter.eyecatch.childImageSharp.fluid} alt="" className="d-block w-100" />
+                <Carousel.Caption>
+                  <h3>{node.frontmatter.captionTitle}</h3>
+                  <p>{node.frontmatter.captionDesc}</p>
+                </Carousel.Caption>
+              </Link>
+            </Carousel.Item>
+          )
+        })}
       </Carousel>
 
       {/* NEWS */}
       <h1><FontAwesomeIcon icon={faCircle} />NEWS</h1>
       <Table className="news" style={{ marginBottom: 0 }}>
         <tbody>
-          {data.allMarkdownRemark.edges.map(( news ) => {
-            const frontmatter = news.node.frontmatter
+          {data.newsList.edges.map(({node}) => {
+            const frontmatter = node.frontmatter
             let cont
-            if (news.node.html) {
-              cont = <Link to={utils.markdownPath(news.node.fileAbsolutePath)}>{frontmatter.title}</Link>
+            if (node.html) {
+              cont = <Link to={utils.markdownPath(node.fileAbsolutePath)}>{frontmatter.title}</Link>
             } else {
               cont = frontmatter.title
             }
@@ -110,7 +92,7 @@ export default function Home({ data, location }) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    newsList: allMarkdownRemark(
       filter: {fileAbsolutePath: {regex: "/news/"}}
       sort: {order: DESC, fields: frontmatter___date}
       limit: 3
@@ -125,6 +107,28 @@ export const query = graphql`
             date(formatString: "YYYY/MM/DD")
           }
           fileAbsolutePath
+        }
+      }
+    }
+    bannerList: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/index-banner/"}}
+      sort: {order: DESC, fields: frontmatter___date}
+      limit: 3
+    ) {
+      edges {
+        node {
+          frontmatter {
+            url
+            eyecatch {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            captionTitle
+            captionDesc
+          }
         }
       }
     }
