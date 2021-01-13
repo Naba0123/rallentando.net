@@ -129,7 +129,7 @@ export const query = graphql`
             eyecatch {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
