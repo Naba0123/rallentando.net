@@ -6,6 +6,7 @@ import Table from "react-bootstrap/Table"
 import utils from "../utils/utils"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import NewsCategory from "../components/newsCategory"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -16,12 +17,13 @@ export default function Home({ data, location }) {
 
   return (
     <Layout location={location}>
+      <SEO pagetitle="NEWS" pagepath={location.pathname} />
 
       {/* NEWS */}
       <h1><FontAwesomeIcon icon={faCircle} />NEWS</h1>
       <Table className="news" style={{ marginBottom: 0 }}>
         <tbody>
-          {data.allMarkdownRemark.edges.map(( news ) => {
+          {data.allMarkdownRemark.edges.map(( news, i ) => {
             const frontmatter = news.node.frontmatter
             let cont
             if (news.node.html) {
@@ -29,7 +31,7 @@ export default function Home({ data, location }) {
             } else {
               cont = frontmatter.title
             }
-            return (<tr>
+            return (<tr key={i}>
               <th>{frontmatter.date}</th>
               <td><NewsCategory category={frontmatter.category} /></td>
               <td>{cont}</td>

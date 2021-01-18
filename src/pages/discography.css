@@ -17,13 +17,21 @@
   padding: 1em 2em;
   border-radius: 0.3em;
   box-shadow: 0 0 2px gray;
-  margin: 0;
+  margin: 0 0 2em 0;
 }
 .music-detail ul {
   margin-bottom: 0;
   list-style: none;
   padding-left: 0;
 }
+.music-detail ul li {
+  margin-bottom: 0.7em;
+  letter-spacing: 0.05em;
+}
+.music-detail ul li:last-child {
+  margin-bottom: 0;
+}
+
 h3 {
   margin: 1em 0;
 }

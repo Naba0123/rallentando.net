@@ -10,9 +10,8 @@ module.exports = {
     title: `Rallentando`,
     description: `オリジナル同人音楽サークル`,
     lang: `ja`,
-    siteUrl: `https://rallentando.netlify.app`,
+    siteUrl: `https://rallentando.net`,
     locale: `ja_JP`,
-    fbappid: `XXXXXXXXXXXXX`,
   },
   plugins: [
     'gatsby-transformer-sharp',
