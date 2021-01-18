@@ -51,42 +51,6 @@ export default function Home({ data, location }) {
               )
             })}
           </Row>
-
-
-              {/* <h3><FontAwesomeIcon icon={faPlayCircle} />クロスフェード</h3>
-              <div className="embed-responsive embed-responsive-16by9">
-                <iframe className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/VlkaBEF6WZ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <p><a href="https://www.youtube.com/watch?v=VlkaBEF6WZ4">【C90 3日目西q-45a】Piano Sketch Vol.1 XFD【ソロピアノアルバム】</a></p>
-
-              <ul>
-                <li>2016年夏コミ（C90）にて頒布</li>
-                <li>オリジナルピアノ曲集10曲を収録</li>
-              </ul>
-              <div class="music-detail">
-                <ul>
-                  <li>1. 朝焼け</li>
-                  <li>2. 雨上がり</li>
-                  <li>3. 窓から</li>
-                  <li>4. 宇宙の空</li>
-                  <li>5. 安らぎの中で</li>
-                  <li>6. 月の夜</li>
-                  <li>7. ヒカリ</li>
-                  <li>8. たからもの</li>
-                  <li>9. 君のもとへ</li>
-                  <li>10. Da Capo</li>
-                </ul>
-              </div>
-
-              <h3><FontAwesomeIcon icon={faHeadphonesAlt} />Listen by</h3>
-              <div className="listen-list">
-                <p>a</p>
-                <p>a</p>
-                <p>a</p>
-                <p>a</p>
-                <p>a</p>
-                <p>a</p>
-              </div> */}
           
         </Tab>
 

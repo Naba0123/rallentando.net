@@ -35,11 +35,11 @@ export default (props) => {
       <div>
         <Container>
           <Nav className="justify-content-center" justify>
-            {links.map((elem) => {
+            {links.map((elem, i) => {
               if (props.location.pathname === elem.path) {
-                return <Nav.Item><Nav.Link href={elem.path} disabled><h6>{elem.name}</h6></Nav.Link></Nav.Item>
+                return <Nav.Item key={i}><Nav.Link href={elem.path} disabled><h6>{elem.name}</h6></Nav.Link></Nav.Item>
               } else {
-                return <Nav.Item><Nav.Link href={elem.path}><h6>{elem.name}</h6></Nav.Link></Nav.Item>
+                return <Nav.Item key={i}><Nav.Link href={elem.path}><h6>{elem.name}</h6></Nav.Link></Nav.Item>
               }
             })}
           </Nav>

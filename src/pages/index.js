@@ -25,9 +25,10 @@ export default function Home({ data, location }) {
 
       {/* TOP Carousel */}
       <Carousel style={{ marginBottom: "40px" }}>
-        {data.bannerList.edges.map(({node}) => {
+        {data.bannerList.edges.map((edge, i) => {
+          const node = edge.node
           return (
-            <Carousel.Item>
+            <Carousel.Item key={i}>
               <Link to={node.frontmatter.url}>
                 <Image fluid={node.frontmatter.eyecatch.childImageSharp.fluid} alt="" className="d-block w-100" />
                 <Carousel.Caption>
@@ -44,7 +45,8 @@ export default function Home({ data, location }) {
       <h1><FontAwesomeIcon icon={faCircle} />NEWS</h1>
       <Table className="news" style={{ marginBottom: 0 }}>
         <tbody>
-          {data.newsList.edges.map(({node}) => {
+          {data.newsList.edges.map((edge, i) => {
+            const node = edge.node
             const frontmatter = node.frontmatter
             let cont
             if (node.html) {
@@ -52,7 +54,7 @@ export default function Home({ data, location }) {
             } else {
               cont = frontmatter.title
             }
-            return (<tr>
+            return (<tr key={i}>
               <th>{frontmatter.date}</th>
               <td><NewsCategory category={frontmatter.category} /></td>
               <td>{cont}</td>
@@ -71,7 +73,7 @@ export default function Home({ data, location }) {
       <p>忙しい毎日を過ごす中の、例えば寝る前に一息つきたいときや、休憩したいときなどにそっと寄り添えるような、そんな音楽を作りたいと思っています。</p>
       <Row style={{ marginTop: "40px", marginBottom: "40px" }}>
         <Col sm={4} className="text-center">
-          <img src="https://placehold.jp/300x300.png" style={{ width: "100%", maxWidth: "300px" }} alt="profile" />
+          <img src="/images/profile.jpg" style={{ width: "100%", maxWidth: "300px", borderRadius: "30px", boxShadow:"0 0 3px gray" }} alt="profile" />
         </Col>
         <Col sm={8}>
           <h2>Naba</h2>
@@ -121,7 +123,7 @@ export const query = graphql`
             url
             eyecatch {
               childImageSharp {
-                fluid(maxWidth: 1000, quality: 90) {
+                fluid(maxWidth: 1070, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

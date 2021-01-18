@@ -1,7 +1,7 @@
 import React from "react"
-import {Link} from "gatsby"
+// import {Link} from "gatsby"
 
-import Card from "react-bootstrap/Card"
+// import Card from "react-bootstrap/Card"
 
 import Layout from "../components/layout"
 import "./event.css"
@@ -16,7 +16,9 @@ export default function Home({ location }) {
 
       <h1><FontAwesomeIcon icon={faCircle} />EVENT</h1>
 
-      <Link to="#">
+      <p>準備中</p>
+
+      {/* <Link to="#">
         <Card>
           <Card.Img variant="top" src="https://placehold.jp/1068x300.png" />
           <Card.Body>
@@ -26,18 +28,7 @@ export default function Home({ location }) {
             </Card.Text>
           </Card.Body>
         </Card>
-      </Link>
-      <Link to="#">
-        <Card>
-          <Card.Img variant="top" src="https://placehold.jp/1068x300.png" />
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk
-              of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Link>
+      </Link> */}
 
     </Layout>
   )
