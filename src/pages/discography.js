@@ -10,6 +10,7 @@ import Col from "react-bootstrap/Col"
 import Card from "react-bootstrap/Card"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import utils from "../utils/utils"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -25,6 +26,7 @@ export default function Home({ data, location }) {
 
   return (
     <Layout location={location}>
+      <SEO pagetitle="DISCOGRAPHY" pagepath={location.pathname} />
 
       <h1><FontAwesomeIcon icon={faCircle} />DISCOGRAPHY</h1>
 

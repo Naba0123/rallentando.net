@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import "./link.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -15,6 +16,7 @@ export default function Home({ location }) {
 
   return (
     <Layout location={location}>
+      <SEO pagetitle="LINK" pagepath={location.pathname} />
 
       <h1><FontAwesomeIcon icon={faCircle} />LINK</h1>
 

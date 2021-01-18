@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import NewsCategory from "../components/newsCategory"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -17,6 +18,7 @@ export default function Template({
   return (
 
     <Layout location={location}>
+      <SEO pagetitle={frontmatter.title} pagepath={location.pathname} />
 
       <h3><FontAwesomeIcon icon={faCircle} />NEWS</h3>
   

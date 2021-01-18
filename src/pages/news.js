@@ -6,6 +6,7 @@ import Table from "react-bootstrap/Table"
 import utils from "../utils/utils"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import NewsCategory from "../components/newsCategory"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -16,6 +17,7 @@ export default function Home({ data, location }) {
 
   return (
     <Layout location={location}>
+      <SEO pagetitle="NEWS" pagepath={location.pathname} />
 
       {/* NEWS */}
       <h1><FontAwesomeIcon icon={faCircle} />NEWS</h1>

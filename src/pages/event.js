@@ -4,6 +4,7 @@ import React from "react"
 // import Card from "react-bootstrap/Card"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import "./event.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -13,6 +14,7 @@ export default function Home({ location }) {
 
   return (
     <Layout location={location}>
+      <SEO pagetitle="EVENT" pagepath={location.pathname} />
 
       <h1><FontAwesomeIcon icon={faCircle} />EVENT</h1>
 

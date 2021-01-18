@@ -9,6 +9,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import NewsCategory from "../components/newsCategory"
 
 import utils from "../utils/utils"
@@ -22,6 +23,7 @@ export default function Home({ data, location }) {
 
   return (
     <Layout location={location}>
+      <SEO pagetitle="TOP" pagepath={location.pathname} />
 
       {/* TOP Carousel */}
       <Carousel style={{ marginBottom: "40px" }}>
