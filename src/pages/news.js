@@ -21,7 +21,7 @@ export default function Home({ data, location }) {
       <h1><FontAwesomeIcon icon={faCircle} />NEWS</h1>
       <Table className="news" style={{ marginBottom: 0 }}>
         <tbody>
-          {data.allMarkdownRemark.edges.map(( news ) => {
+          {data.allMarkdownRemark.edges.map(( news, i ) => {
             const frontmatter = news.node.frontmatter
             let cont
             if (news.node.html) {
@@ -29,7 +29,7 @@ export default function Home({ data, location }) {
             } else {
               cont = frontmatter.title
             }
-            return (<tr>
+            return (<tr key={i}>
               <th>{frontmatter.date}</th>
               <td><NewsCategory category={frontmatter.category} /></td>
               <td>{cont}</td>

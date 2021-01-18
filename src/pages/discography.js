@@ -32,10 +32,10 @@ export default function Home({ data, location }) {
         <Tab eventKey="album" title="Album">
 
           <Row>
-            {data.allMarkdownRemark.edges.map(( disc ) => {
+            {data.allMarkdownRemark.edges.map(( disc, i ) => {
               const frontmatter = disc.node.frontmatter
               return (
-                <Col md={6}>
+                <Col md={6} key={i}>
                   <Link to={utils.markdownPath(disc.node.fileAbsolutePath)}>
                     <Card>
                       <Card.Header>
@@ -59,7 +59,7 @@ export default function Home({ data, location }) {
           <Row>
             <Col md={6} className="youtube-list">
               <div className="embed-responsive embed-responsive-16by9">
-                <iframe title="a" className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/VlkaBEF6WZ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="a" className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/VlkaBEF6WZ4" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
               <p><a href="https://www.youtube.com/watch?v=VlkaBEF6WZ4">【C90 3日目西q-45a】Piano Sketch Vol.1 XFD【ソロピアノアルバム】</a></p>
             </Col>
@@ -70,7 +70,7 @@ export default function Home({ data, location }) {
         <Tab eventKey="soundcloud" title="SoundCloud">
           <div className="soundcloud-list">
             {soundcloudList.map((id) => (
-              <iframe title="b" width="100%" height="125" scrolling="no" frameborder="no" allow="autoplay" src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${id}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false`}></iframe>
+              <iframe key={id} title="b" width="100%" height="125" scrolling="no" frameBorder="no" allow="autoplay" src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${id}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false`}></iframe>
             ))}
             </div>
         </Tab>
