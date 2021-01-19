@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import NewsCategory from "../components/newsCategory"
 
+import "./news.css"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircle } from "@fortawesome/free-regular-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
