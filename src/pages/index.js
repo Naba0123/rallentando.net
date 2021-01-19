@@ -70,7 +70,7 @@ export default function Home({ data, location }) {
 
       {/* ABOUT */}
       <h1><FontAwesomeIcon icon={faCircle} />ABOUT</h1>
-      <p>オリジナルピアノ曲を中心に作曲し、CDや楽譜の頒布、配信を行っているサークルです。</p>
+      <p>オリジナルピアノ曲を中心に作曲し、楽曲や楽譜の頒布、配信を行っているサークルです。</p>
       <p>Rallentando という音楽記号は、だんだん遅く、ゆっくりになる、という意味があります。</p>
       <p>忙しい毎日を過ごす中の、例えば寝る前に一息つきたいときや、休憩したいときなどにそっと寄り添えるような、そんな音楽を作りたいと思っています。</p>
       <Row style={{ marginTop: "40px", marginBottom: "40px" }}>

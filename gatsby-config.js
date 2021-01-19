@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Rallentando`,
-    description: `オリジナル同人音楽サークル`,
+    description: `オリジナルピアノ曲を中心に作曲し、楽曲や楽譜の頒布、配信を行っているサークルです。`,
     lang: `ja`,
     siteUrl: `https://rallentando.net`,
     locale: `ja_JP`,

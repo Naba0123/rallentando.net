@@ -4,9 +4,9 @@ eyecatch: "./cover.jpg"
 youtube: "VlkaBEF6WZ4"
 ---
 
-2016年8月コミックマーケット89にて頒布
+2016年8月コミックマーケット90にて頒布
 
-オリジナルピアノ曲集10曲を収録
+オリジナルピアノ曲10曲を収録
 
 <div class="music-detail">
   <ul>
@@ -25,10 +25,7 @@ youtube: "VlkaBEF6WZ4"
 
 ## 音楽配信サイト
 
-### すべて
-準備中
-
-### ダウンロード
+### ダウンロード販売
 
 ▼ iTunes Store  
 準備中
@@ -48,4 +45,7 @@ youtube: "VlkaBEF6WZ4"
 準備中
 
 ▼ Amazon Music Unlimited  
+準備中
+
+### 上記以外も含むすべて
 準備中
