@@ -33,11 +33,11 @@ youtube: "VlkaBEF6WZ4"
 
 ### ストリーミング
 
-◆ Spotify（準備中）
+◆ [Spotify](https://open.spotify.com/album/2IUzwItJnm2jhyYpR9Fkbe?si=_UBfPQGtTVKqkew8cNC3fA)
 
 ◆ [Apple Music](https://music.apple.com/jp/album/piano-sketch-vol-1/1548618522?l=en&ls=1&app=music)
 
-◆ YouTube Music（準備中）
+◆ [YouTube Music](https://music.youtube.com/browse/MPREb_nPzKnioNZUR)
 
 ◆ [Prime Music / Amazon Music Unlimited](https://music.amazon.co.jp/albums/B08SQ9BWZF)
 
