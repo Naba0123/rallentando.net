@@ -27,25 +27,19 @@ youtube: "VlkaBEF6WZ4"
 
 ### ダウンロード販売
 
-▼ iTunes Store  
-準備中
+◆ [iTunes Store](itmss://music.apple.com/jp/album/piano-sketch-vol-1/1548618522?l=en&ls=1&app=itunes)
 
-▼ LINE MUSIC  
-準備中
+◆ [LINE MUSIC](https://music.line.me/launch?target=album&item=mb0000000001f4043f&cc=JP&v=1)
 
 ### ストリーミング
 
-▼ Spotify  
-準備中
+◆ Spotify（準備中）
 
-▼ Apple Music  
-準備中
+◆ [Apple Music](https://music.apple.com/jp/album/piano-sketch-vol-1/1548618522?l=en&ls=1&app=music)
 
-▼ YouTube Music  
-準備中
+◆ YouTube Music（準備中）
 
-▼ Amazon Music Unlimited  
-準備中
+◆ [Prime Music / Amazon Music Unlimited](https://music.amazon.co.jp/albums/B08SQ9BWZF)
 
 ### 上記以外も含むすべて
-準備中
+◆ https://big-up.style/BJfty8YtAX
