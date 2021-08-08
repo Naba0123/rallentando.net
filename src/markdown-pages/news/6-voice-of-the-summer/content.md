@@ -1,5 +1,5 @@
 ---
-date: "2021-01-19"
+date: "2021-08-08"
 category: "MUSIC"
 title: "YouTube および SoundCloud に新曲「夏の声」をアップロードしました"
 ---
