@@ -6,6 +6,7 @@ export default (props) => {
 
   const categories = {
     RELEASE: "success",
+    MUSIC: "success",
     EVENT: "primary",
     INFO: "info",
     OTHER: "secondary",
