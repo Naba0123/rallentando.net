@@ -21,7 +21,7 @@ import "./discography.css"
 export default function Home({ data, location }) {
 
   const soundcloudList = [
-    1102182424, 246363767, 245825677, 243405491, 200761010, 200760703, 200760295
+    1105773301, 1102182424, 246363767, 245825677, 243405491, 200761010, 200760703, 200760295
   ]
 
   return (
@@ -59,7 +59,13 @@ export default function Home({ data, location }) {
         <Tab eventKey="youtube" title="YouTube">
           
           <Row>
-          <Col md={6} className="youtube-list">
+            <Col md={6} className="youtube-list">
+              <div className="embed-responsive embed-responsive-16by9">
+                <iframe title="Especial Holiday　[Original Solo Piano]" className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/V_3AD7laFZ8" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              </div>
+              <p><a href="https://www.youtube.com/watch?v=V_3AD7laFZ8">Especial Holiday　[Original Solo Piano]</a></p>
+            </Col>
+            <Col md={6} className="youtube-list">
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe title="夏の声　[Original Solo Piano]" className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Rj9-44B2R7Q" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
